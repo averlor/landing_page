@@ -1,0 +1,284 @@
+/* general */
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+body{
+    background: url('source/font/more-fon-1.jpg')
+}
+/* grid */
+.main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 150px auto 25em;
+}
+/* button "start" */
+.button{
+    width: 250px;
+    margin: 1% auto;
+    text-align: center;
+}
+.button__start{
+    display: inline-block;
+    width: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 55px;
+    line-height: 55px;
+    color: purple;
+    background-color: transparent;
+    padding: 0 35px;
+    outline: none;
+    border: none;
+    position: relative;
+    -webkit-transition: .5s color;
+    transition: .5s color;
+    cursor: pointer;
+}
+.button__start::before{
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: 3s toBottom ease infinite;
+            animation: 3s toBottom ease infinite;
+    z-index: -2;
+}
+.button__start::after{
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #876c99;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    -webkit-animation: 3s toTop ease infinite;
+            animation: 3s toTop ease infinite;
+    z-index: -1;
+}
+.button__start:hover{
+    color: darkred;
+}
+.button__start:hover::before{
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    -webkit-animation: none;
+            animation: none;
+}
+.button__start:hover::after{
+    width: 100%;
+    height: 100%;
+    -webkit-animation: none;
+            animation: none;
+}
+@-webkit-keyframes toBottom{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: 40px;
+    }
+    100%{
+        top: 0;
+    }
+}
+@keyframes toBottom{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: 40px;
+    }
+    100%{
+        top: 0;
+    }
+}
+@-webkit-keyframes toTop{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 40px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+@keyframes toTop{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 40px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+/* modal window */
+.modal{
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.93);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.modal__content{
+    width: 80%;
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15% auto;
+    border: 1px solid #000;
+}
+/* progress bar */
+#progress{
+    position: relative;
+    width: 80%;
+    height: 40px;
+    background-color: pink;
+    margin: 0 auto;
+}
+#bar{
+    position: absolute;
+    width: 0.1%;
+    height: 100%;
+    background-color: #876c99;
+}
+#label{
+    text-align: center;
+    line-height: 40px;
+    color: white;
+}
+/* carousel */
+.slider{
+    position: relative;
+    margin: 1% 1%;
+    max-width: 420px;
+}
+.slider__prev, .slider__next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font: bold 18px Arial;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider__next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.slider__prev:hover, .slider__next:hover{
+    background-color: rgba(0,0,0,.8);
+}
+.slider__photo{
+    width: 100%;
+    height: 100%;
+}
+.slider__text{
+    color: #f2f2f2;
+    font: bold 24px Arial;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+.button{
+    text-align: center;
+}
+.button__dot{
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    margin: 0 2px;
+    background-color: #fefefe;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-transition: background-color .6s ease;
+    transition: background-color .6s ease;
+}
+.active, .button__dot:hover{
+    background-color: #717171;
+}
+.fade{
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+    from{
+        opacity: .4;
+    }
+    to{
+        opacity: 1
+    }
+}
+@keyframes fade{
+    from{
+        opacity: .4;
+    }
+    to{
+        opacity: 1
+    }
+}
+/* short description */
+.description{
+    background-color: #fefefe;
+    width: 45vw;
+    height: 20vh;
+    border-radius: 5px;
+}
+.description h2{
+    font: bold 1.5em Arial, Verdana, sans-serif;
+    text-align: center;
+    color: #13418c
+}
+.description p{
+    font: bold 1.2em "Times New Roman", serif;
+    text-align: center;
+}
+.button-hotel{
+    width: 250px;
+    margin: 2% auto 5% auto;
+    text-align: center;
+}
+.button-hotel__buy{
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .5em 2em;
+    /* position: absolute;
+    bottom: 2%; */
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
+}
+.button-hotel__buy:hover{
+    background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+.button-hotel__buy:active{
+    background: linear-gradient(#f59500, #f5ae00) #f59500;
+}
