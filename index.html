@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <title>One Page</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="modal" id="modal">
+            <div class="modal__content">
+                <div id="progress">
+                    <div id="bar">
+                        <div id="label">0%</div>
+                    </div>
+                </div>
+                <div class="button" id="btn">
+                    <button class="button__start" onclick="move()">start</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="slider">
+                <div class="slider__mySlides fade">
+                    <img src="source/slider/more_1.jpg" class="slider__photo" alt="first">
+                    <div class="slider__text">Greece: island Crete</div>
+                </div>
+
+                <div class="slider__mySlides fade">
+                        <img src="source/slider/more_2.jpg" class="slider__photo" alt="second">
+                        <div class="slider__text">Spain: Costa Dorada</div>
+                </div>
+
+                <div class="slider__mySlides fade">
+                        <img src="source/slider/more_3.jpg" class="slider__photo" alt="third">
+                        <div class="slider__text">Sri Lanka: Trincomalee</div>
+                </div>
+                <a class="slider__prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="slider__next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="button">
+                        <span class="button__dot" onclick="currentSlide(1)"></span>
+                        <span class="button__dot" onclick="currentSlide(2)"></span>
+                        <span class="button__dot" onclick="currentSlide(3)"></span>
+                    </div>
+            </div>
+            
+            <div class="description">
+                <h2>Lorem ipsum.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus incidunt, aliquam aut numquam id mollitia?</p>
+                <div class="button-hotel">
+                    <button class="button-hotel__buy">buy a hotel room</button>
+                </div>
+                <p></p>
+            </div>
+
+            <div></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
